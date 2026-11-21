@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luw.ai for SketchUp</title>
+<meta name="description" content="How to install the Luw.ai extension in SketchUp and make your first AI render.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #ffffff;
+    --soft: #f6f3fb;
+    --text: #1f1d24;
+    --muted: #5d5868;
+    --line: #e7e2ef;
+    --accent: #9333ea;
+    --accent-2: #ec4899;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121016;
+      --soft: #1d1924;
+      --text: #ece9f2;
+      --muted: #a8a2b4;
+      --line: #2e2838;
+      --accent: #b77cf5;
+      --accent-2: #f472b6;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 18px/1.6 Barlow, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  main { max-width: 860px; margin: 0 auto; padding: 48px 20px 80px; }
+  header .brand { display: flex; align-items: center; gap: 12px; color: var(--muted); font-weight: 600; letter-spacing: .02em; }
+  header .brand b { color: var(--accent); }
+  h1 { font-size: 44px; line-height: 1.1; margin: 12px 0 12px; letter-spacing: -0.01em; }
+  h2 { font-size: 28px; margin: 56px 0 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+  h3 { font-size: 20px; margin: 28px 0 6px; }
+  p { margin: 8px 0 14px; }
+  .lead { font-size: 21px; color: var(--muted); max-width: 680px; }
+  a { color: var(--accent); }
+  kbd, code {
+    font: 15px/1.3 ui-monospace, "Cascadia Mono", Consolas, monospace;
+    background: var(--soft); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px;
+  }
+  .ui { font-weight: 700; }
+  nav.toc { background: var(--soft); border-radius: 14px; padding: 16px 22px; margin: 28px 0 8px; }
+  nav.toc ol { margin: 6px 0 0; padding-left: 22px; }
+  ul.need { padding-left: 22px; }
+  ul.need li { margin: 4px 0; }
+  ol.steps { list-style: none; counter-reset: step; padding: 0; margin: 18px 0 0; }
+  ol.steps > li { counter-increment: step; position: relative; padding: 0 0 26px 52px; }
+  ol.steps > li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: 0;
+    width: 34px; height: 34px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-weight: 700; font-size: 17px; color: #fff;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  }
+  figure { margin: 14px 0 6px; }
+  figure img {
+    display: block; max-width: 100%; height: auto;
+    border: 1px solid var(--line); border-radius: 12px;
+    box-shadow: 0 10px 30px -18px rgba(60, 20, 100, .45);
+  }
+  figure.narrow img { max-width: 380px; }
+  figure.wide { margin-left: -4px; margin-right: -4px; }
+  figcaption { font-size: 15px; color: var(--muted); margin-top: 8px; }
+  .note {
+    background: var(--soft); border-left: 4px solid var(--accent);
+    border-radius: 8px; padding: 12px 16px; margin: 14px 0; font-size: 17px;
+  }
+  .note b:first-child { color: var(--accent); }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .pair figure { margin: 0; }
+  dl.help dt { font-weight: 700; margin-top: 16px; }
+  dl.help dd { margin: 4px 0 0; color: var(--text); }
+  footer { margin-top: 64px; color: var(--muted); font-size: 15px; border-top: 1px solid var(--line); padding-top: 16px; }
+  @media (max-width: 640px) {
+    body { font-size: 17px; }
+    main { padding: 28px 16px 60px; }
+    h1 { font-size: 34px; }
+    .pair { grid-template-columns: 1fr; }
+    figure.narrow img { max-width: 100%; }
+    ol.steps > li { padding-left: 44px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <div class="brand"><b>Luw.ai</b> · Guide</div>
+  <h1>Luw.ai for SketchUp</h1>
+  <p class="lead">Turn your SketchUp view into a photo-real render, right inside SketchUp. No export, no extra app. This guide shows how to install the extension and make your first render.</p>
+</header>
+
+<figure class="wide">
+  <img src="img/sketchup/overview.jpg" width="1600" height="870" alt="SketchUp with a house model on the left and the Luw.ai panel on the right. The panel already shows the SketchUp view.">
+  <figcaption>SketchUp with the Luw.ai panel. Your view is already in the panel when it opens.</figcaption>
+</figure>
+
+<nav class="toc" aria-label="Contents">
+  <b>On this page</b>
+  <ol>
+    <li><a href="#need">What you need</a></li>
+    <li><a href="#install">Install the extension</a></li>
+    <li><a href="#open">Open Luw.ai and sign in</a></li>
+    <li><a href="#first-render">Get your first render</a></li>
+    <li><a href="#help">Help</a></li>
+  </ol>
+</nav>
+
+<h2 id="need">What you need</h2>
+<ul class="need">
+  <li><b>SketchUp 2021.1 or newer</b> on Windows or Mac. SketchUp Pro, Studio and the free trial all work. The free web version (SketchUp Free) can't run extensions.</li>
+  <li><b>A Luw.ai account.</b> Each render uses tokens from your account: 1 token for one image.</li>
+  <li><b>An internet connection.</b> The renders are made on Luw.ai's servers.</li>
+  <li><b>The Luw.ai extension file:</b> <code>luw_ai-0.1.0.rbz</code>. <a href="https://github.com/Luvi-io/luw-plugins-releases/releases/latest">Download it here</a> and save it anywhere, for example in Downloads. If you got a <code>.zip</code> file instead, unzip it first. The <code>.rbz</code> file is inside.</li>
+</ul>
+
+<h2 id="install">Install the extension</h2>
+<ol class="steps">
+  <li>
+    In SketchUp, open <span class="ui">Extensions › Extension Manager</span>.
+  </li>
+  <li>
+    Click <span class="ui">Install Extension</span> at the bottom left.
+    <figure>
+      <img src="img/sketchup/install-extension.png" width="1000" height="666" alt="SketchUp's Extension Manager with the Install Extension button marked.">
+    </figure>
+  </li>
+  <li>
+    Choose the file <code>luw_ai-0.1.0.rbz</code> and click <span class="ui">Open</span>.
+  </li>
+  <li>
+    SketchUp asks if you want to continue. Click <span class="ui">Yes</span>.
+    <figure>
+      <img src="img/sketchup/trust-prompt.png" width="772" height="247" alt="SketchUp asks: Installing an extension gives it access to your system. Do you want to continue? The Yes button is marked.">
+    </figure>
+  </li>
+  <li>
+    Done. <b>Luw.ai</b> is now in the list and it is <span class="ui">Enabled</span>. It says <i>Unsigned</i> for now. That is normal for this version.
+    <figure>
+      <img src="img/sketchup/installed.png" width="1000" height="666" alt="Extension Manager list with the new Luw.ai row marked: Enabled, Unsigned.">
+    </figure>
+  </li>
+</ol>
+
+<h2 id="open">Open Luw.ai and sign in</h2>
+<p>Click the <b>Luw.ai button</b> (a white star on black) on the Luw.ai toolbar. Or use the menu: <span class="ui">Extensions › Luw.ai</span>.</p>
+<figure>
+  <img src="img/sketchup/toolbar.png" width="900" height="400" alt="Top of the SketchUp window. The Extensions menu and the Luw.ai toolbar button are marked.">
+  <figcaption>The Extensions menu and the Luw.ai toolbar button.</figcaption>
+</figure>
+<p>The Luw.ai panel opens next to your model. It is the Luw.ai web app, made to work with SketchUp. You can move it and make it bigger like any window.</p>
+<div class="note"><b>First time only:</b> sign in with your Luw.ai account in the panel. SketchUp remembers you, so next time the panel opens ready to use.</div>
+<p>Can't see the toolbar? Open <span class="ui">View › Toolbars</span> and turn on <b>Luw.ai</b>.</p>
+
+<h2 id="first-render">Get your first render</h2>
+<ol class="steps">
+  <li>
+    <b>Set up your view.</b> Orbit, pan and zoom in SketchUp until you like the picture. What you see is what Luw.ai renders.
+    <div class="note"><b>Tip:</b> colors, materials and shadows in your model give better renders than a plain white model.</div>
+  </li>
+  <li>
+    <b>Open Luw.ai.</b> The <b>Render</b> tool opens, and your SketchUp view is already in it. You don't need to save or export anything.
+    <figure class="narrow">
+      <img src="img/sketchup/panel-view.png" width="560" height="1159" alt="The Luw.ai panel showing the Render tool with the SketchUp view as the picture. Capture SketchUp view and Generate Image with AI are marked.">
+    </figure>
+    Moved the camera? Click <span class="ui">Capture SketchUp view</span> on the picture to take the new view.
+  </li>
+  <li>
+    <b>Choose options</b> if you like: <i>Time of Day</i>, <i>Lighting</i>, or a short <i>Prompt</i> such as “summer evening, green garden”. Or leave them on <i>Auto</i>.
+  </li>
+  <li>
+    <b>Click <span class="ui">Generate Image with AI</span>.</b> One image uses 1 token. Your render appears under <b>Latest Designs</b> and is ready in about a minute.
+    <div class="pair">
+      <figure>
+        <img src="img/sketchup/generating.png" width="560" height="370" alt="Latest Designs with the new render at 28 percent.">
+        <figcaption>Working on it…</figcaption>
+      </figure>
+      <figure>
+        <img src="img/sketchup/render-done.png" width="560" height="370" alt="Latest Designs with the finished render.">
+        <figcaption>Ready. Click the picture to open it.</figcaption>
+      </figure>
+    </div>
+  </li>
+  <li>
+    <b>Look at your render.</b> Drag the slider in the middle to compare your model with the render. Then click <span class="ui">Add to SketchUp</span> at the top left.
+    <figure class="narrow">
+      <img src="img/sketchup/result.png" width="560" height="726" alt="The finished render with a before and after slider. The Add to SketchUp button at the top left is marked.">
+    </figure>
+  </li>
+  <li>
+    <b>That's it.</b> The render is now in your model, next to it. To remove it, press <kbd>Ctrl</kbd>+<kbd>Z</kbd> (<kbd>Cmd</kbd>+<kbd>Z</kbd> on Mac) once.
+    <figure>
+      <img src="img/sketchup/in-model.jpg" width="1600" height="870" alt="SketchUp with the house model and the photo-real render placed in the model next to it.">
+      <figcaption>Your model and its render, side by side in SketchUp.</figcaption>
+    </figure>
+  </li>
+</ol>
+
+<h3>More tools</h3>
+<p>Open the menu (☰) at the top of the panel for more tools, such as interiors, exteriors, sketch to render and video. Most tools start with your SketchUp view. With <b>3DGen AI</b> you get a 3D model, and <span class="ui">Add to SketchUp</span> brings it into your model as one object.</p>
+
+<h2 id="help">Help</h2>
+<dl class="help">
+  <dt>Luw.ai is not in the Extensions menu.</dt>
+  <dd>Open <span class="ui">Extensions › Extension Manager</span> and check that Luw.ai is <i>Enabled</i>. If it is not in the list, click the gear icon (top right), set <i>Loading Policy</i> to <b>Approve Unidentified Extensions</b>, and install it again.</dd>
+
+  <dt>The panel is empty or doesn't load.</dt>
+  <dd>Luw.ai needs the internet. Check your connection, then close the panel and open it again.</dd>
+
+  <dt>The picture in the panel is an old view.</dt>
+  <dd>Click <span class="ui">Capture SketchUp view</span> on the picture.</dd>
+
+  <dt>How do I remove the extension?</dt>
+  <dd>In <span class="ui">Extension Manager</span>, click the arrow next to Luw.ai and choose <b>Uninstall</b>.</dd>
+</dl>
+
+<footer>
+  Luw.ai for SketchUp 0.1.0 · Screenshots from SketchUp 2026 on Windows.
+</footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luw.ai for Rhino</title>
+<meta name="description" content="How to install the Luw.ai plug-in in Rhino and make your first AI render.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="guide.css">
+</head>
+<body>
+<main>
+
+<header>
+  <div class="brand"><b>Luw.ai</b> · Guide</div>
+  <h1>Luw.ai for Rhino</h1>
+  <p class="lead">Turn your Rhino view into a photo-real render, right inside Rhino. No export, no extra app. This guide shows how to install the plug-in and make your first render.</p>
+</header>
+
+<figure class="wide">
+  <img src="img/rhino/overview.jpg" width="1600" height="687" alt="Rhino with a house model and its render placed next to it, and the Luw.ai panel on the right.">
+  <figcaption>Rhino with the Luw.ai panel, and a render placed back in the model.</figcaption>
+</figure>
+
+<nav class="toc" aria-label="Contents">
+  <b>On this page</b>
+  <ol>
+    <li><a href="#need">What you need</a></li>
+    <li><a href="#install">Install the plug-in</a></li>
+    <li><a href="#open">Open Luw.ai and sign in</a></li>
+    <li><a href="#first-render">Get your first render</a></li>
+    <li><a href="#help">Help</a></li>
+  </ol>
+</nav>
+
+<h2 id="need">What you need</h2>
+<ul class="need">
+  <li><b>Rhino 8 or Rhino 9</b> on Windows. The 90-day evaluation works too.</li>
+  <li><b>A Luw.ai account.</b> Each render uses tokens from your account: 1 token for one image.</li>
+  <li><b>An internet connection.</b> The renders are made on Luw.ai's servers.</li>
+  <li><b>The Luw.ai plug-in:</b> <code>Luw.ai-Rhino-0.1.1.zip</code>. <a href="https://github.com/Luvi-io/luw-plugins-releases/releases/latest">Download it here</a> and unzip it. Inside is the file <code>luw-ai-0.1.1-rh8_0-any.yak</code>.</li>
+</ul>
+
+<h2 id="install">Install the plug-in</h2>
+<ol class="steps">
+  <li>Open Rhino.</li>
+  <li>Drag the <code>.yak</code> file from your folder and drop it onto the Rhino window. Rhino installs the plug-in.</li>
+  <li>If Rhino asks you to, restart Rhino.</li>
+</ol>
+<div class="note"><b>Didn't work?</b> Close Rhino. In the unzipped folder, right-click <code>install.ps1</code> and choose <i>Run with PowerShell</i>. Then open Rhino again.</div>
+
+<h2 id="open">Open Luw.ai and sign in</h2>
+<p>Type <b>Luw</b> in Rhino's command line and press <kbd>Enter</kbd>.</p>
+<figure>
+  <img src="img/rhino/command.png" width="600" height="40" alt="Rhino's command line with Luw typed in.">
+</figure>
+<p>The Luw.ai panel opens next to the Rhino window. It is the Luw.ai web app, made to work with Rhino. You can move it, make it bigger, or drag it into Rhino's panel area to dock it.</p>
+<div class="note"><b>First time only:</b> sign in with your Luw.ai account in the panel. Rhino remembers you, so next time the panel opens ready to use.</div>
+
+<h2 id="first-render">Get your first render</h2>
+<ol class="steps">
+  <li>
+    <b>Set up your view.</b> Rotate, pan and zoom the Perspective viewport until you like the picture. What you see is what Luw.ai renders.
+    <div class="note"><b>Tip:</b> a <i>Shaded</i> or <i>Rendered</i> display mode with colors or materials gives better renders than <i>Wireframe</i>.</div>
+  </li>
+  <li>
+    <b>Open Luw.ai</b> (type <b>Luw</b>). The <b>Render</b> tool opens, and your Rhino view is already in it. You don't need to save or export anything.
+    <figure class="narrow">
+      <img src="img/rhino/panel-view.png" width="520" height="1017" alt="The Luw.ai panel with the Rhino view as the picture. Capture Rhino view and Generate Image with AI are marked.">
+    </figure>
+    Moved the camera? Click <span class="ui">Capture Rhino view</span> on the picture to take the new view.
+  </li>
+  <li>
+    <b>Choose options</b> if you like: <i>Time of Day</i>, <i>Lighting</i>, or a short <i>Prompt</i> such as “in a pine forest by the sea”. Or leave them on <i>Auto</i>.
+  </li>
+  <li>
+    <b>Click <span class="ui">Generate Image with AI</span>.</b> One image uses 1 token. Your render appears under <b>Latest Designs</b> and is ready in about a minute. Click it to open it.
+    <figure class="narrow">
+      <img src="img/rhino/generate.png" width="520" height="354" alt="The Generate Image with AI button, and the finished render under Latest Designs. Both are marked.">
+    </figure>
+  </li>
+  <li>
+    <b>Click <span class="ui">Add to Rhino</span></b> at the top left. You can first drag the slider on the picture to compare your model with the render.
+    <figure class="narrow">
+      <img src="img/rhino/result.png" width="520" height="603" alt="The finished render of the house in a forest. The Add to Rhino button at the top left is marked.">
+    </figure>
+  </li>
+  <li>
+    <b>That's it.</b> The render is now in your model as a picture, next to it. To remove it, press <kbd>Ctrl</kbd>+<kbd>Z</kbd> once.
+    <figure>
+      <img src="img/rhino/in-model.jpg" width="1600" height="854" alt="Rhino with the house model and the render placed in the model as a picture next to it.">
+      <figcaption>Your model and its render, side by side in Rhino.</figcaption>
+    </figure>
+  </li>
+</ol>
+
+<h3>More tools</h3>
+<p>Open the menu (☰) at the top of the panel for more tools, such as interiors, exteriors, sketch to render and video. Most tools start with your Rhino view. With <b>3DGen AI</b> you get a 3D model, and <span class="ui">Add to Rhino</span> brings it into your model.</p>
+
+<h2 id="help">Help</h2>
+<dl class="help">
+  <dt>The panel disappears when I switch to another app.</dt>
+  <dd>That is how Rhino's floating panels work: they hide while Rhino is in the background and come back with it. Dock the panel into Rhino's panel area if you want it to stay.</dd>
+
+  <dt>I can't find the panel.</dt>
+  <dd>Type <b>Luw</b> again. If the panel was on a screen that is gone, it comes back next to Rhino.</dd>
+
+  <dt>The panel is empty or doesn't load.</dt>
+  <dd>Luw.ai needs the internet. Check your connection, then close the panel and type <b>Luw</b> again.</dd>
+
+  <dt>The picture in the panel is an old view.</dt>
+  <dd>Click <span class="ui">Capture Rhino view</span> on the picture.</dd>
+
+  <dt>How do I remove the plug-in?</dt>
+  <dd>Type <b>PackageManager</b>, find Luw.ai under <i>Installed</i>, and choose <b>Uninstall</b>. Or run <code>uninstall.ps1</code> from the unzipped folder.</dd>
+</dl>
+
+<footer>
+  Luw.ai for Rhino 0.1.1 · Screenshots from Rhino 9 on Windows.
+</footer>
+
+</main>
+</body>
+</html>

@@ -44,7 +44,7 @@
   <li><b>Rhino 8 or Rhino 9</b> on Windows. The 90-day evaluation works too.</li>
   <li><b>A Luw.ai account.</b> Each render uses tokens from your account: 1 token for one image.</li>
   <li><b>An internet connection.</b> The renders are made on Luw.ai's servers.</li>
-  <li><b>The Luw.ai plug-in:</b> <code>Luw.ai-Rhino-0.1.4.zip</code>. <a href="https://github.com/Luvi-io/luw-plugins-releases/releases/latest">Download it here</a> and unzip it. Inside is the file <code>luw-ai-0.1.4-rh8_0-any.yak</code>.</li>
+  <li><b>The Luw.ai plug-in:</b> <code>Luw.ai-Rhino-0.1.5.zip</code>. <a href="https://github.com/Luvi-io/luw-plugins-releases/releases/latest">Download it here</a> and unzip it. Inside is the file <code>luw-ai-0.1.5-rh8_0-any.yak</code>.</li>
 </ul>
 
 <h2 id="install">Install the plug-in</h2>
@@ -117,7 +117,7 @@
     </figure>
   </li>
   <li>
-    <b>Change it by talking.</b> “Give it a 35° gable roof”, “add a barbecue corner by the pool”, “this area needs a TV”. Only what changed is rebuilt. Select something in Rhino first and ArchiGPT knows what “this” means. It knows your own objects too (drawn, imported or copied): “move the wall I drew 2 m east”, “what else is in the model?”
+    <b>Change it by talking.</b> “Give it a 35° gable roof”, “add a barbecue corner by the pool”, “this area needs a TV”. Only what changed is rebuilt. Select something in Rhino first and ArchiGPT knows what “this” means. It knows your own objects too (drawn, imported or copied): “move the wall I drew 2 m east”, “what else is in the model?” Model with it too: “cut a 1 m wide doorway in the box I drew”, “make this slab 30 cm thick”, “how many square metres is this wall?”, “draw the plot’s outline and dimension it”, “cut the view at 1.2 m”, “shadows for 21 June at 17:00 in Istanbul”. Walls and floors come in with the textures they have in Luw Studio.
   </li>
   <li>
     <b>Change it yourself, too.</b> Move, turn, scale or delete what ArchiGPT built, or add objects of your own, whenever you like. Your changes stay when ArchiGPT builds again, and it takes them over into the design.
@@ -132,7 +132,7 @@
 <div class="note"><b>Undo:</b> each change ArchiGPT makes in Rhino is one step. Press <kbd>Ctrl</kbd>+<kbd>Z</kbd> to take it back.</div>
 
 <h2 id="grasshopper">Grasshopper: many design options at once</h2>
-<p>The plug-in also adds a <b>Luw Render</b> component to Grasshopper. It renders a Rhino view from your definition, so you can render many design options in one go: each prompt is one option. It uses your sign-in from the Luw.ai panel, so sign in there once first.</p>
+<p>The plug-in also adds a <b>Luw.ai</b> tab to Grasshopper. Its <b>Luw Render</b> component It renders a Rhino view from your definition, so you can render many design options in one go: each prompt is one option. It uses your sign-in from the Luw.ai panel, so sign in there once first.</p>
 <ol class="steps">
   <li>
     Type <b>Grasshopper</b> in Rhino's command line. Find the <b>Luw.ai</b> tab and drag <b>Luw Render</b> onto the canvas.
@@ -144,7 +144,7 @@
     </figure>
   </li>
   <li>
-    Press the button. The component takes the Rhino view, renders it, and shows what it is doing under the component. Each image uses 1 token.
+    Before you press it, the component says what a run will cost, such as <i>Ready: 3 images, 3 tokens</i>. Press the button: the component takes the Rhino view, renders it, and shows each picture under itself as it comes. Double-click a picture to see it full size.
   </li>
   <li>
     When it says <i>Done</i>, the outputs give you the images: <b>I</b> as files on your computer, <b>U</b> as links. <b>St</b> is the status.
@@ -158,6 +158,10 @@
   </li>
 </ol>
 <dl class="help">
+  <dt>Right-click the component</dt>
+  <dd><b>Cancel</b> a run, <b>Add to Rhino</b> (puts the pictures next to your model), <b>Open results folder</b>, and <b>Add tool list</b> or <b>Add style list</b> to choose from a list instead of typing. The results stay with your Grasshopper file when you save it.</dd>
+  <dt>More components</dt>
+  <dd><b>Luw Edit</b> changes a picture with a prompt. <b>Luw Capture</b> takes a picture of a Rhino view, free. <b>Luw Picture</b> places pictures in your model. <b>Luw 3D</b> makes a 3D model of one thing from a picture, as a file and as meshes in Grasshopper.</dd>
   <dt>More inputs</dt>
   <dd><b>T</b> (Tool): <i>render</i>, <i>interior</i>, <i>exterior</i> or <i>sketch</i>. <b>S</b> (Styles): style names such as <i>Scandinavian</i>. <b>F</b> (Fidelity): how closely to follow your model, 40 creative to 90 precise. <b>N</b> (Images): images per prompt, 1 to 4. <b>V</b> (View): a viewport name; empty means the active one.</dd>
 </dl>
@@ -181,7 +185,7 @@
 </dl>
 
 <footer>
-  Luw.ai for Rhino 0.1.4 · Screenshots from Rhino 9 on Windows.
+  Luw.ai for Rhino 0.1.5 · Screenshots from Rhino 9 on Windows.
 </footer>
 
 </main>

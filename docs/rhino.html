@@ -16,12 +16,14 @@
 <header>
   <div class="brand"><b>Luw.ai</b> · Guide</div>
   <h1>Luw.ai for Rhino</h1>
-  <p class="lead">Turn your Rhino view into a photo-real render, right inside Rhino. No export, no extra app. This guide shows how to install the plug-in and make your first render.</p>
+  <p class="lead">Design a building by talking to ArchiGPT and watch it appear in your Rhino model. Then render it, right inside Rhino. No export, no extra app.</p>
 </header>
 
-<figure class="wide">
-  <img src="img/rhino/overview.jpg" width="1600" height="687" alt="Rhino with a house model and its render placed next to it, and the Luw.ai panel on the right.">
-  <figcaption>Rhino with the Luw.ai panel, and a render placed back in the model.</figcaption>
+<figure class="film">
+  <video controls playsinline preload="none" poster="img/rhino/film-cover.jpg" width="1920" height="1080">
+    <source src="video/luw-rhino-demo.mp4" type="video/mp4">
+  </video>
+  <figcaption>Luw.ai × Archiagent.ai in Rhino: a hand-drawn plan becomes a furnished, textured villa, then a render and two Grasshopper options.</figcaption>
 </figure>
 
 <nav class="toc" aria-label="Contents">
@@ -31,6 +33,7 @@
     <li><a href="#install">Install the plug-in</a></li>
     <li><a href="#open">Open Luw.ai and sign in</a></li>
     <li><a href="#first-render">Get your first render</a></li>
+    <li><a href="#archigpt">Design a building with ArchiGPT</a></li>
     <li><a href="#grasshopper">Grasshopper: many design options at once</a></li>
     <li><a href="#help">Help</a></li>
   </ol>
@@ -41,7 +44,7 @@
   <li><b>Rhino 8 or Rhino 9</b> on Windows. The 90-day evaluation works too.</li>
   <li><b>A Luw.ai account.</b> Each render uses tokens from your account: 1 token for one image.</li>
   <li><b>An internet connection.</b> The renders are made on Luw.ai's servers.</li>
-  <li><b>The Luw.ai plug-in:</b> <code>Luw.ai-Rhino-0.1.2.zip</code>. <a href="https://github.com/Luvi-io/luw-plugins-releases/releases/latest">Download it here</a> and unzip it. Inside is the file <code>luw-ai-0.1.2-rh8_0-any.yak</code>.</li>
+  <li><b>The Luw.ai plug-in:</b> <code>Luw.ai-Rhino-0.1.3.zip</code>. <a href="https://github.com/Luvi-io/luw-plugins-releases/releases/latest">Download it here</a> and unzip it. Inside is the file <code>luw-ai-0.1.3-rh8_0-any.yak</code>.</li>
 </ul>
 
 <h2 id="install">Install the plug-in</h2>
@@ -67,7 +70,7 @@
     <div class="note"><b>Tip:</b> a <i>Shaded</i> or <i>Rendered</i> display mode with colors or materials gives better renders than <i>Wireframe</i>.</div>
   </li>
   <li>
-    <b>Open Luw.ai</b> (type <b>Luw</b>). The <b>Render</b> tool opens, and your Rhino view is already in it. You don't need to save or export anything.
+    <b>Open Luw.ai</b> (type <b>Luw</b>). The panel opens on Luw.ai's home page. Click <b>Render AI</b>: your Rhino view is already in it. You don't need to save or export anything.
     <figure class="narrow">
       <img src="img/rhino/panel-view.png" width="520" height="1017" alt="The Luw.ai panel with the Rhino view as the picture. Capture Rhino view and Generate Image with AI are marked.">
     </figure>
@@ -83,7 +86,7 @@
     </figure>
   </li>
   <li>
-    <b>Click <span class="ui">Add to Rhino</span></b> at the top left. You can first drag the slider on the picture to compare your model with the render.
+    <b>Click the picture:</b> it opens full size in a window of its own. Close that window, and the panel shows the render: drag the slider to compare it with your model, then click <span class="ui">Add to Rhino</span> at the top left.
     <figure class="narrow">
       <img src="img/rhino/result.png" width="520" height="603" alt="The finished render of the house in a forest. The Add to Rhino button at the top left is marked.">
     </figure>
@@ -99,6 +102,34 @@
 
 <h3>More tools</h3>
 <p>Open the menu (☰) at the top of the panel for more tools, such as interiors, exteriors, sketch to render and video. Most tools start with your Rhino view. With <b>3DGen AI</b> you get a 3D model, and <span class="ui">Add to Rhino</span> brings it into your model.</p>
+
+<h2 id="archigpt">Design a building with ArchiGPT</h2>
+<p>ArchiGPT is Luw.ai's design assistant. In Rhino it builds what you describe straight into your model, as ordinary Rhino objects on their own layers, while you watch.</p>
+<ol class="steps">
+  <li>
+    <b>Open ArchiGPT</b> from the home page of the Luw.ai panel.
+  </li>
+  <li>
+    <b>Say what you want.</b> Describe the building, or attach a photo of a plan you drew on paper and write something like “Apply this floorplan as a villa.” ArchiGPT builds it in Rhino: walls, rooms, doors and windows, the kitchen, furniture, a pool.
+    <figure>
+      <img src="img/rhino/archigpt.jpg" width="1600" height="900" alt="Rhino with a villa built by ArchiGPT around a pool, and the conversation in the Luw.ai panel on the right.">
+      <figcaption>The villa in Rhino, and the conversation that built it.</figcaption>
+    </figure>
+  </li>
+  <li>
+    <b>Change it by talking.</b> “Give it a 35° gable roof”, “add a barbecue corner by the pool”, “this area needs a TV”. Only what changed is rebuilt. Select something in Rhino first and ArchiGPT knows what “this” means.
+  </li>
+  <li>
+    <b>Change it yourself, too.</b> Move, turn, scale or delete what ArchiGPT built, or add objects of your own, whenever you like. Your changes stay when ArchiGPT builds again, and it takes them over into the design.
+  </li>
+  <li>
+    <b>Add materials.</b> “Light oak floors, white plaster walls, a dark grey metal roof.” ArchiGPT puts real materials on the model.
+  </li>
+  <li>
+    <b>Render it.</b> Frame a view in Rhino and ask for a render. ArchiGPT shows what it will cost and waits for your <span class="ui">Approve</span>. Click the result to see it full size, or put it next to your model with <span class="ui">Add to Rhino</span>.
+  </li>
+</ol>
+<div class="note"><b>Undo:</b> each change ArchiGPT makes in Rhino is one step. Press <kbd>Ctrl</kbd>+<kbd>Z</kbd> to take it back.</div>
 
 <h2 id="grasshopper">Grasshopper: many design options at once</h2>
 <p>The plug-in also adds a <b>Luw Render</b> component to Grasshopper. It renders a Rhino view from your definition, so you can render many design options in one go: each prompt is one option. It uses your sign-in from the Luw.ai panel, so sign in there once first.</p>
@@ -150,7 +181,7 @@
 </dl>
 
 <footer>
-  Luw.ai for Rhino 0.1.2 · Screenshots from Rhino 9 on Windows.
+  Luw.ai for Rhino 0.1.3 · Screenshots from Rhino 9 on Windows.
 </footer>
 
 </main>

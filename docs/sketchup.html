@@ -16,12 +16,14 @@
 <header>
   <div class="brand"><b>Luw.ai</b> · Guide</div>
   <h1>Luw.ai for SketchUp</h1>
-  <p class="lead">Turn your SketchUp view into a photo-real render, right inside SketchUp. No export, no extra app. This guide shows how to install the extension and make your first render.</p>
+  <p class="lead">Design a building by talking to ArchiGPT and watch it appear in your SketchUp model. Then render it, right inside SketchUp. No export, no extra app.</p>
 </header>
 
-<figure class="wide">
-  <img src="img/sketchup/overview.jpg" width="1600" height="870" alt="SketchUp with a house model on the left and the Luw.ai panel on the right. The panel already shows the SketchUp view.">
-  <figcaption>SketchUp with the Luw.ai panel. Your view is already in the panel when it opens.</figcaption>
+<figure class="film">
+  <video controls playsinline preload="none" poster="img/sketchup/film-cover.jpg" width="1920" height="1080">
+    <source src="video/luw-sketchup-demo.mp4" type="video/mp4">
+  </video>
+  <figcaption>Luw.ai × Archiagent.ai in SketchUp: a hand-drawn plan becomes a furnished, textured villa, then a render placed back in the model.</figcaption>
 </figure>
 
 <nav class="toc" aria-label="Contents">
@@ -31,6 +33,7 @@
     <li><a href="#install">Install the extension</a></li>
     <li><a href="#open">Open Luw.ai and sign in</a></li>
     <li><a href="#first-render">Get your first render</a></li>
+    <li><a href="#archigpt">Design a building with ArchiGPT</a></li>
     <li><a href="#help">Help</a></li>
   </ol>
 </nav>
@@ -40,7 +43,7 @@
   <li><b>SketchUp 2021.1 or newer</b> on Windows or Mac. SketchUp Pro, Studio and the free trial all work. The free web version (SketchUp Free) can't run extensions.</li>
   <li><b>A Luw.ai account.</b> Each render uses tokens from your account: 1 token for one image.</li>
   <li><b>An internet connection.</b> The renders are made on Luw.ai's servers.</li>
-  <li><b>The Luw.ai extension file:</b> <code>luw_ai-0.1.2.rbz</code>. <a href="https://github.com/Luvi-io/luw-plugins-releases/releases/latest">Download it here</a> and save it anywhere, for example in Downloads. If you got a <code>.zip</code> file instead, unzip it first. The <code>.rbz</code> file is inside.</li>
+  <li><b>The Luw.ai extension file:</b> <code>luw_ai-0.1.3.rbz</code>. <a href="https://github.com/Luvi-io/luw-plugins-releases/releases/latest">Download it here</a> and save it anywhere, for example in Downloads. If you got a <code>.zip</code> file instead, unzip it first. The <code>.rbz</code> file is inside.</li>
 </ul>
 
 <h2 id="install">Install the extension</h2>
@@ -55,7 +58,7 @@
     </figure>
   </li>
   <li>
-    Choose the file <code>luw_ai-0.1.2.rbz</code> and click <span class="ui">Open</span>.
+    Choose the file <code>luw_ai-0.1.3.rbz</code> and click <span class="ui">Open</span>.
   </li>
   <li>
     SketchUp asks if you want to continue. Click <span class="ui">Yes</span>.
@@ -88,7 +91,7 @@
     <div class="note"><b>Tip:</b> colors, materials and shadows in your model give better renders than a plain white model.</div>
   </li>
   <li>
-    <b>Open Luw.ai.</b> The <b>Render</b> tool opens, and your SketchUp view is already in it. You don't need to save or export anything.
+    <b>Open Luw.ai.</b> The panel opens on Luw.ai's home page. Click <b>Render AI</b>: your SketchUp view is already in it. You don't need to save or export anything.
     <figure class="narrow">
       <img src="img/sketchup/panel-view.png" width="560" height="1159" alt="The Luw.ai panel showing the Render tool with the SketchUp view as the picture. Capture SketchUp view and Generate Image with AI are marked.">
     </figure>
@@ -111,7 +114,7 @@
     </div>
   </li>
   <li>
-    <b>Look at your render.</b> Drag the slider in the middle to compare your model with the render. Then click <span class="ui">Add to SketchUp</span> at the top left.
+    <b>Look at your render.</b> Click the picture: it opens full size in a window of its own. Close that window, and the panel shows the render: drag the slider in the middle to compare it with your model, then click <span class="ui">Add to SketchUp</span> at the top left.
     <figure class="narrow">
       <img src="img/sketchup/result.png" width="560" height="726" alt="The finished render with a before and after slider. The Add to SketchUp button at the top left is marked.">
     </figure>
@@ -127,6 +130,34 @@
 
 <h3>More tools</h3>
 <p>Open the menu (☰) at the top of the panel for more tools, such as interiors, exteriors, sketch to render and video. Most tools start with your SketchUp view. With <b>3DGen AI</b> you get a 3D model, and <span class="ui">Add to SketchUp</span> brings it into your model as one object.</p>
+
+<h2 id="archigpt">Design a building with ArchiGPT</h2>
+<p>ArchiGPT is Luw.ai's design assistant. In SketchUp it builds what you describe straight into your model, as ordinary SketchUp groups and components on their own tags, while you watch.</p>
+<ol class="steps">
+  <li>
+    <b>Open ArchiGPT</b> from the home page of the Luw.ai panel.
+  </li>
+  <li>
+    <b>Say what you want.</b> Describe the building, or attach a photo of a plan you drew on paper and write something like “Apply this floorplan as a villa.” ArchiGPT builds it in SketchUp: walls, rooms, doors and windows, the kitchen, furniture, a pool.
+  </li>
+  <li>
+    <b>Change it by talking.</b> “Give it a 35° gable roof”, “add a barbecue corner by the pool”. Attach a screenshot of the spot, or a reference photo, to show what you mean. Only what changed is rebuilt.
+    <figure>
+      <img src="img/sketchup/archigpt.jpg" width="1600" height="900" alt="SketchUp with a poolside deck rebuilt after a reference photo: four sunbeds in two pairs, folded cream parasols. The reference photo and the conversation are in the Luw.ai panel on the right.">
+      <figcaption>A reference photo in the chat, and the poolside rebuilt to match it.</figcaption>
+    </figure>
+  </li>
+  <li>
+    <b>Change it yourself, too.</b> Move, turn, scale or delete what ArchiGPT built, or add geometry of your own, whenever you like. Your changes stay when ArchiGPT builds again, and it takes them over into the design.
+  </li>
+  <li>
+    <b>Add materials.</b> “Light oak floors, white plaster walls, a dark grey metal roof.” Or ask for a texture of its own: Pattern AI makes a seamless one for the model.
+  </li>
+  <li>
+    <b>Render it.</b> Frame a view in SketchUp and ask for a render. ArchiGPT shows what it will cost and waits for your <span class="ui">Approve</span>. Click the result to see it full size, or put it in your model with <span class="ui">Add to SketchUp</span>.
+  </li>
+</ol>
+<div class="note"><b>Undo:</b> each change ArchiGPT makes in SketchUp is one step. Press <kbd>Ctrl</kbd>+<kbd>Z</kbd> to take it back.</div>
 
 <h2 id="help">Help</h2>
 <dl class="help">
@@ -144,7 +175,7 @@
 </dl>
 
 <footer>
-  Luw.ai for SketchUp 0.1.2 · Screenshots from SketchUp 2026 on Windows.
+  Luw.ai for SketchUp 0.1.3 · Screenshots from SketchUp 2026 on Windows.
 </footer>
 
 </main>

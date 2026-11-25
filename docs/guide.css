@@ -61,6 +61,12 @@
     box-shadow: 0 10px 30px -18px rgba(60, 20, 100, .45);
   }
   figure.narrow img { max-width: 380px; }
+  figure.film { margin: 28px 0 8px; }
+  figure.film video {
+    display: block; width: 100%; height: auto; aspect-ratio: 16 / 9;
+    background: #000; border-radius: 16px;
+    box-shadow: 0 24px 60px -28px rgba(30, 10, 60, .55);
+  }
   figure.wide { margin-left: -4px; margin-right: -4px; }
   figcaption { font-size: 15px; color: var(--muted); margin-top: 8px; }
   .note {

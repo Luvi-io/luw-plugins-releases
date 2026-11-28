@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luw.ai for Revit</title>
+<meta name="description" content="How to install the Luw.ai add-in in Revit, design a building by talking to ArchiGPT and make your first AI render.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="guide.css">
+</head>
+<body>
+<main>
+
+<header>
+  <div class="brand"><b>Luw.ai</b> · Guide</div>
+  <h1>Luw.ai for Revit</h1>
+  <p class="lead">Design a building by talking to ArchiGPT and watch it appear in your Revit project as walls, floors and roofs. Then render it, right inside Revit. No export, no extra app.</p>
+</header>
+
+<figure class="film">
+  <iframe src="https://www.youtube-nocookie.com/embed/Qc-4Hk8nP7I?rel=0" title="Luw.ai for Revit" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <figcaption>Luw.ai × Archiagent.ai in Revit: a hand-drawn plan becomes a furnished, textured villa with a garden, then renders of the view and of every room.</figcaption>
+</figure>
+
+<nav class="toc" aria-label="Contents">
+  <b>On this page</b>
+  <ol>
+    <li><a href="#need">What you need</a></li>
+    <li><a href="#install">Install the add-in</a></li>
+    <li><a href="#open">Open Luw.ai and sign in</a></li>
+    <li><a href="#first-render">Get your first render</a></li>
+    <li><a href="#archigpt">Design a building with ArchiGPT</a></li>
+    <li><a href="#help">Help</a></li>
+  </ol>
+</nav>
+
+<h2 id="need">What you need</h2>
+<ul class="need">
+  <li><b>Revit 2024, 2025, 2026 or 2027</b> on Windows. The free trial works too.</li>
+  <li><b>A Luw.ai account.</b> Each render uses tokens from your account: 1 token for one image.</li>
+  <li><b>An internet connection.</b> The renders are made on Luw.ai's servers.</li>
+  <li><b>The Luw.ai add-in:</b> <code>Luw.ai-Revit.zip</code>. <a href="https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-Revit.zip">Download it here</a> and unzip it into a folder.</li>
+</ul>
+
+<h2 id="install">Install the add-in</h2>
+<ol class="steps">
+  <li>Close Revit.</li>
+  <li>In the unzipped folder, right-click <code>install.ps1</code> and choose <i>Run with PowerShell</i>. It installs Luw.ai for your Windows user, for every Revit version you have.</li>
+  <li>Open Revit. The first time, Revit asks whether to load Luw.ai: choose <span class="ui">Always Load</span>.</li>
+</ol>
+
+<h2 id="open">Open Luw.ai and sign in</h2>
+<p>Open a project, then click <b>Luw.ai</b> on the <i>Luw.ai</i> tab of the ribbon.</p>
+<figure>
+  <img src="img/revit/ribbon.png" width="765" height="120" alt="Revit's ribbon with the Luw.ai tab open. The tab and its Luw.ai button are marked.">
+</figure>
+<p>The Luw.ai panel docks at the right of the view. It is the Luw.ai web app, made to work with Revit. Close it with its <b>×</b>; the button opens it again where you left it. You can drag it anywhere, as any Revit panel.</p>
+<figure>
+  <img src="img/revit/overview.jpg" width="1600" height="900" alt="Revit with the Luw.ai panel docked at the right of the 3D view, showing Luw.ai's tools.">
+  <figcaption>The Luw.ai panel, docked in Revit.</figcaption>
+</figure>
+<div class="note"><b>First time only:</b> sign in with your Luw.ai account in the panel. Revit remembers you, so next time the panel opens ready to use.</div>
+
+<h2 id="first-render">Get your first render</h2>
+<ol class="steps">
+  <li>
+    <b>Set up your view.</b> Open a 3D view and frame it until you like the picture. What you see is what Luw.ai renders.
+    <div class="note"><b>Tip:</b> the <i>Shaded</i> or <i>Realistic</i> visual style gives better renders than <i>Wireframe</i> or <i>Hidden Line</i>.</div>
+  </li>
+  <li>
+    <b>Click Render AI</b> on the panel's home page: your Revit view is already in it. You don't need to save or export anything. Moved the camera? Click <span class="ui">Capture Revit view</span> on the picture to take the new view.
+  </li>
+  <li>
+    <b>Choose options</b> if you like: <i>Time of Day</i>, <i>Lighting</i>, or a short <i>Prompt</i> such as “golden hour, warm light on the deck”. Or leave them on <i>Auto</i>.
+  </li>
+  <li>
+    <b>Click <span class="ui">Generate Image with AI</span>.</b> One image uses 1 token. Your render is ready in about a minute. Click it to open it.
+  </li>
+  <li>
+    <b>Compare and keep it.</b> Drag the slider to compare the render with your view, then click <span class="ui">Add to Revit</span> at the top left.
+    <figure class="narrow">
+      <img src="img/revit/result.png" width="520" height="743" alt="The finished render with a slider comparing it with the Revit view. The Add to Revit button at the top left is marked.">
+    </figure>
+  </li>
+  <li>
+    <b>That's it.</b> The render is now in your project as a drafting view of its own, ready to place on a sheet. Revit opens it in a new tab; your 3D view stays open in its tab. To remove it, press <kbd>Ctrl</kbd>+<kbd>Z</kbd> once.
+    <figure>
+      <img src="img/revit/in-model.jpg" width="1600" height="900" alt="Revit showing the render in a drafting view of its own, its tab next to the 3D view's tab.">
+      <figcaption>The render in its drafting view, next to the 3D view's tab.</figcaption>
+    </figure>
+  </li>
+</ol>
+
+<h3>More tools</h3>
+<p>Open the menu (☰) at the top of the panel for more tools, such as interiors, exteriors, sketch to render and video. Most tools start with your Revit view. With <b>3DGen AI</b> you get a 3D model, and <span class="ui">Add to Revit</span> brings it into your project as a Generic Model, beside what is there.</p>
+
+<h2 id="archigpt">Design a building with ArchiGPT</h2>
+<p>ArchiGPT is Luw.ai's design assistant. In Revit it builds what you describe straight into your project while you watch: real Revit walls with their openings, floors, and roofs, doors, windows, stairs and furniture in their own categories.</p>
+<ol class="steps">
+  <li>
+    <b>Open ArchiGPT</b> from the home page of the Luw.ai panel.
+  </li>
+  <li>
+    <b>Say what you want.</b> Describe the building, or drag a photo of a plan you drew on paper into ArchiGPT and write something like “Apply this floorplan as a villa.” ArchiGPT builds it in Revit: walls, rooms, doors and windows, the kitchen, furniture, a pool.
+    <figure>
+      <img src="img/revit/archigpt.jpg" width="1600" height="900" alt="Revit with a villa built by ArchiGPT: a pool, a terrace, a lawn and a sculpture on a plinth, and the conversation in the Luw.ai panel on the right.">
+      <figcaption>The villa in Revit, and the conversation that built it.</figcaption>
+    </figure>
+  </li>
+  <li>
+    <b>Change it by talking.</b> “Give it a 35° gable roof”, “add a barbecue corner by the pool”, “lay out the sunbeds like this photo”. Only what changed is rebuilt. Select something in Revit first and ArchiGPT knows what “this” means. It knows your own elements too: “move the wall I drew 2 m east”, “what else is in the project?”
+  </li>
+  <li>
+    <b>Change it yourself, too.</b> Move, rotate, mirror or delete what ArchiGPT built, or add elements of your own, whenever you like. Your changes stay when ArchiGPT builds again.
+  </li>
+  <li>
+    <b>Add materials.</b> “Light oak floors, white plaster walls, a dark grey metal roof.” ArchiGPT puts real Revit materials on the model, and can have Pattern AI make a texture just for it. Switch the view to <i>Realistic</i> to see the textures.
+  </li>
+  <li>
+    <b>Add what no library has.</b> “A bronze sculpture by the pool.” ArchiGPT designs it, 3DGen AI makes it a real 3D model, and it lands in your project.
+  </li>
+  <li>
+    <b>Render it.</b> Frame a 3D view in Revit and ask for a render, or ask ArchiGPT to go into every room and render each one. It shows what it will cost and waits for your <span class="ui">Approve</span>. Click a result to see it full size, or keep it in your project with <span class="ui">Add to Revit</span>.
+    <figure class="narrow">
+      <img src="img/revit/render.png" width="520" height="1036" alt="The Luw.ai panel with the request Go into the living room and render it in 2K, the finished render and ArchiGPT's answer.">
+    </figure>
+  </li>
+</ol>
+<div class="note"><b>Undo:</b> each change ArchiGPT makes in Revit is one step in Revit's undo list. Press <kbd>Ctrl</kbd>+<kbd>Z</kbd> to take it back.</div>
+<div class="note"><b>Layers in Revit:</b> when you ask ArchiGPT to hide or colour a layer, it does it with the category in the active view's Visibility/Graphics: “hide the roof” hides Roofs in this view only.</div>
+
+<h2 id="help">Help</h2>
+<dl class="help">
+  <dt>I don't see the Luw.ai tab.</dt>
+  <dd>Revit asked whether to load Luw.ai and it was told not to. Close Revit, run <code>install.ps1</code> again, open Revit and choose <span class="ui">Always Load</span>.</dd>
+
+  <dt>The panel is empty or doesn't load.</dt>
+  <dd>Luw.ai needs the internet. Check your connection, then close the panel and open it again with the Luw.ai button.</dd>
+
+  <dt>The picture in the panel is an old view.</dt>
+  <dd>Click <span class="ui">Capture Revit view</span> on the picture.</dd>
+
+  <dt>Something went wrong.</dt>
+  <dd>Send us the file <code>%LOCALAPPDATA%\Luw.ai\logs\plugin.log</code>.</dd>
+
+  <dt>How do I remove the add-in?</dt>
+  <dd>Close Revit, then right-click <code>uninstall.ps1</code> in the unzipped folder and choose <i>Run with PowerShell</i>.</dd>
+</dl>
+
+<footer>
+  Luw.ai for Revit 0.1.8 · Screenshots from Revit 2027 on Windows.
+</footer>
+
+</main>
+</body>
+</html>

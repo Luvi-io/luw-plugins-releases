@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luw.ai for Blender</title>
+<meta name="description" content="How to install the Luw.ai extension in Blender, design a building by talking to ArchiGPT and make your first AI render.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="guide.css">
+</head>
+<body>
+<main>
+
+<header>
+  <div class="brand"><b>Luw.ai</b> · Guide</div>
+  <h1>Luw.ai for Blender</h1>
+  <p class="lead">Design a building by talking to ArchiGPT and watch it appear in your Blender scene. Then render it, right inside Blender. No export, no extra app.</p>
+</header>
+
+<figure class="film">
+  <iframe src="https://www.youtube-nocookie.com/embed/ER0yvwXsq8A?rel=0" title="Luw.ai for Blender" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <figcaption>Luw.ai × Archiagent.ai in Blender: a hand-drawn plan becomes a furnished, textured villa with a garden, then renders of the view and of every room.</figcaption>
+</figure>
+
+<nav class="toc" aria-label="Contents">
+  <b>On this page</b>
+  <ol>
+    <li><a href="#need">What you need</a></li>
+    <li><a href="#install">Install the extension</a></li>
+    <li><a href="#open">Open Luw.ai and sign in</a></li>
+    <li><a href="#first-render">Get your first render</a></li>
+    <li><a href="#archigpt">Design a building with ArchiGPT</a></li>
+    <li><a href="#help">Help</a></li>
+  </ol>
+</nav>
+
+<h2 id="need">What you need</h2>
+<ul class="need">
+  <li><b>Blender 4.2 or later</b> on Windows 10 or 11, 64-bit.</li>
+  <li><b>A Luw.ai account.</b> Each render uses tokens from your account: 1 token for one image.</li>
+  <li><b>An internet connection.</b> The renders are made on Luw.ai's servers.</li>
+  <li><b>Microsoft Edge WebView2 Runtime.</b> Windows 10 and 11 usually have it already.</li>
+  <li><b>The Luw.ai extension:</b> <code>Luw.ai-Blender.zip</code>. <a href="https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-Blender.zip">Download it here</a>. Don't unzip it: Blender installs the zip file itself.</li>
+</ul>
+
+<h2 id="install">Install the extension</h2>
+<ol class="steps">
+  <li>In Blender, choose <span class="ui">Edit › Preferences</span> and click <b>Get Extensions</b>.</li>
+  <li>Click the <span class="ui">⌄</span> menu at the top right and choose <i>Install from Disk…</i></li>
+  <li>Choose the file <code>Luw.ai-Blender.zip</code> you downloaded and click <span class="ui">Install from Disk</span>. Luw.ai is installed and turned on.</li>
+</ol>
+
+<h2 id="open">Open Luw.ai and sign in</h2>
+<p>Click the <b>Luw.ai</b> button at the right of the 3D Viewport's header. Or choose <b>Window › Luw.ai</b> in Blender's menu bar, or <b>View › Luw.ai</b> in the 3D Viewport.</p>
+<figure>
+  <img src="img/blender/menu.png" width="520" height="46" alt="The right end of the 3D Viewport's header with the Luw.ai button, marked.">
+</figure>
+<p>The Luw.ai panel docks at the right of the 3D Viewport, as an area of its own. It is the Luw.ai web app, made to work with Blender. Drag the edge between the panel and the viewport to make it wider or narrower. Click the same button again to close it; it opens again as you left it. A file saved with the panel open opens with it.</p>
+<figure>
+  <img src="img/blender/overview.jpg" width="1600" height="900" alt="Blender with the Luw.ai panel docked at the right of the 3D Viewport, showing Luw.ai's tools.">
+  <figcaption>The Luw.ai panel, docked in Blender.</figcaption>
+</figure>
+<div class="note"><b>First time only:</b> sign in with your Luw.ai account in the panel. Blender remembers you, so next time the panel opens ready to use. One sign-in covers every Luw.ai plugin on your computer.</div>
+<div class="note"><b>Typing in the panel:</b> while you type in the panel, Blender's shortcuts (<kbd>G</kbd>, <kbd>R</kbd>, <kbd>S</kbd>, <kbd>X</kbd>, <kbd>Delete</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd> and the others) are off, so your words don't turn into commands. Copy, paste and undo work in the panel's text boxes. Click in the 3D Viewport and Blender's shortcuts work again.</div>
+
+<h2 id="first-render">Get your first render</h2>
+<ol class="steps">
+  <li>
+    <b>Set up your view.</b> Frame the 3D Viewport until you like the picture. What you see is what Luw.ai renders, without the grid, gizmos or overlays, in the viewport's shading.
+    <div class="note"><b>Tip:</b> Material Preview or Solid shading with colors or materials gives better renders than a wireframe view.</div>
+  </li>
+  <li>
+    <b>Click Render AI</b> on the panel's home page: your Blender view is already in it. You don't need to save or export anything. Moved the camera? Click <span class="ui">Capture Blender view</span> on the picture to take the new view.
+  </li>
+  <li>
+    <b>Choose options</b> if you like: <i>Time of Day</i>, <i>Lighting</i>, or a short <i>Prompt</i> such as “golden hour, warm light on the deck”. Or leave them on <i>Auto</i>.
+  </li>
+  <li>
+    <b>Click <span class="ui">Generate Image with AI</span>.</b> One image uses 1 token. Your render is ready in about a minute. Click it to open it.
+  </li>
+  <li>
+    <b>Compare and keep it.</b> Drag the slider to compare the render with your view, then click <span class="ui">Add to Blender</span> at the top left.
+    <figure class="narrow">
+      <img src="img/blender/result.png" width="520" height="839" alt="The finished render with a slider comparing it with the Blender view. The Add to Blender button at the top left is marked.">
+    </figure>
+  </li>
+  <li>
+    <b>That's it.</b> The render is now in your scene: a picture standing upright beside your model, on the right as you look at it, facing the camera, in the <i>Luw.ai › Renders</i> collection. The picture is packed into your .blend file. To remove it, press <kbd>Ctrl</kbd>+<kbd>Z</kbd> once.
+    <figure>
+      <img src="img/blender/in-model.jpg" width="1600" height="900" alt="The Blender 3D Viewport with the villa model and its render standing beside it on a plane.">
+      <figcaption>Your model and its render, side by side in Blender.</figcaption>
+    </figure>
+  </li>
+</ol>
+
+<h3>More tools</h3>
+<p>Open the menu (☰) at the top of the panel for more tools, such as interiors, exteriors, sketch to render and video. Most tools start with your Blender view. With <b>3DGen AI</b> you get a 3D model, and <span class="ui">Add to Blender</span> brings it into your scene with Blender's own glTF importer: beside your model on the right as you look at it, standing on the ground, its front to the camera, 1 m on its largest side, in the <i>Luw.ai › Models</i> collection. One <kbd>Ctrl</kbd>+<kbd>Z</kbd> removes it.</p>
+
+<h2 id="archigpt">Design a building with ArchiGPT</h2>
+<p>ArchiGPT is Luw.ai's design assistant. In Blender it builds what you describe straight into your scene, as ordinary Blender objects in their own collections under <i>Luw.ai</i>, while you watch.</p>
+<ol class="steps">
+  <li>
+    <b>Open ArchiGPT</b> from the home page of the Luw.ai panel.
+  </li>
+  <li>
+    <b>Say what you want.</b> Describe the building, or attach a photo of a plan you drew on paper and write something like “Apply this floorplan as a villa.” ArchiGPT builds it in Blender: walls, rooms, doors and windows, the kitchen, furniture, a pool. Each kind has its collection in <i>Luw.ai</i>: <i>Walls</i>, <i>Slabs</i>, <i>Ceilings</i>, <i>Roof</i>, <i>Doors</i>, <i>Windows</i>, <i>Glass</i>, <i>Stairs</i>, <i>Columns</i>, <i>Fences</i>, <i>Rooms</i> and <i>Furniture</i>.
+    <figure>
+      <img src="img/blender/archigpt.jpg" width="1600" height="900" alt="Blender with a villa built by ArchiGPT: a pool, a terrace, a lawn and a bronze sculpture on a plinth, its collections in the Outliner, and the conversation in the Luw.ai panel on the right.">
+      <figcaption>The house in Blender, and the conversation that built it.</figcaption>
+    </figure>
+  </li>
+  <li>
+    <b>Change it by talking.</b> “Give it a 35° gable roof”, “add a barbecue corner by the pool”, “lay out the sunbeds like this photo”. Only what changed is rebuilt. Select something in Blender first and ArchiGPT knows what “this” means. It knows your own objects too: “move the cube I made 2 m east”, “what else is in the scene?” Ask it to copy, rotate, scale, hide or lock objects, join or cut solids, measure (“how long is this wall?”), cut a section (“cut the view at 1.2 m”), set the sun (“sun for 21 June at 17:00 in Istanbul”) or save the view.
+  </li>
+  <li>
+    <b>Change it yourself, too.</b> Move, rotate, scale or delete what ArchiGPT built, or add objects of your own, whenever you like. Your changes stay when ArchiGPT builds again.
+  </li>
+  <li>
+    <b>Add materials.</b> “Light oak floors, white plaster walls, a dark grey metal roof.” ArchiGPT puts real materials on the model, and can have Pattern AI make a texture just for it. The textures are packed into your .blend file.
+  </li>
+  <li>
+    <b>Add what no library has.</b> “A bronze sculpture by the pool.” ArchiGPT designs it, 3DGen AI makes it a real 3D model, and it lands in your scene.
+  </li>
+  <li>
+    <b>Render it.</b> Frame a view in Blender and ask for a render, or ask ArchiGPT to go into every room and render each one in 4K. It shows what it will cost and waits for your <span class="ui">Approve</span>. Click a result to see it full size in a large window over Blender (<kbd>Esc</kbd> closes it), or put it in your scene with <span class="ui">Add to Blender</span>.
+    <figure class="narrow">
+      <img src="img/blender/render.png" width="520" height="1534" alt="The Luw.ai panel with the request Render from this view in 2K, golden hour sunset, ArchiGPT's answer and the finished render.">
+    </figure>
+  </li>
+</ol>
+<div class="note"><b>Undo:</b> each change ArchiGPT makes in Blender is one step. Press <kbd>Ctrl</kbd>+<kbd>Z</kbd> to take it back, or ask ArchiGPT to undo.</div>
+
+<h2 id="help">Help</h2>
+<dl class="help">
+  <dt>I don't see the Luw.ai button.</dt>
+  <dd>Choose <span class="ui">Edit › Preferences › Add-ons</span> and check that <b>Luw.ai</b> is there and turned on. If it is not, install it again from <code>Luw.ai-Blender.zip</code>. The button is in the header of the 3D Viewport; <span class="ui">Window › Luw.ai</span> works everywhere.</dd>
+
+  <dt>The panel is empty or doesn't load.</dt>
+  <dd>Luw.ai needs the internet and the Microsoft Edge WebView2 Runtime. Check your connection, <a href="https://go.microsoft.com/fwlink/p/?LinkId=2124703">install the WebView2 Runtime</a> if the panel says it is missing, then close the panel and open it again.</dd>
+
+  <dt>The picture in the panel is an old view.</dt>
+  <dd>Click <span class="ui">Capture Blender view</span> on the picture.</dd>
+
+  <dt>Blender's shortcuts don't work.</dt>
+  <dd>They are off while you type in the panel. Click in the 3D Viewport, and they work again.</dd>
+
+  <dt>ArchiGPT says Blender is busy.</dt>
+  <dd>Luw.ai changes the scene in Object Mode only. Press <kbd>Tab</kbd> to leave Edit Mode, or finish the tool you are using, and ArchiGPT goes on.</dd>
+
+  <dt>Something went wrong.</dt>
+  <dd>Send us the file <code>%LOCALAPPDATA%\Luw.ai\logs\plugin.log</code>.</dd>
+
+  <dt>How do I remove the extension?</dt>
+  <dd>Choose <span class="ui">Edit › Preferences › Add-ons</span>, open <b>Luw.ai</b> and click <span class="ui">Uninstall</span>. What Luw.ai added to your scenes stays.</dd>
+</dl>
+
+<footer>
+  Luw.ai for Blender 0.1.8 · Screenshots from Blender 5.2 on Windows.
+</footer>
+
+</main>
+</body>
+</html>

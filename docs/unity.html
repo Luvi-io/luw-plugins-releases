@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luw.ai for Unity</title>
+<meta name="description" content="How to install the Luw.ai package in Unity, design a building by talking to ArchiGPT and make your first AI render.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="guide.css">
+</head>
+<body>
+<main>
+
+<header>
+  <div class="brand"><b>Luw.ai</b> · Guide</div>
+  <h1>Luw.ai for Unity</h1>
+  <p class="lead">Design a building by talking to ArchiGPT and watch it appear in your Unity scene. Then render it, right inside the Unity editor. No export, no extra app.</p>
+</header>
+
+<figure class="film">
+  <iframe src="https://www.youtube-nocookie.com/embed/tfGuXIOe9-M?rel=0" title="Luw.ai for Unity" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <figcaption>Luw.ai × Archiagent.ai in Unity: a hand-drawn plan becomes a furnished, textured villa with a garden, then renders of the view and of every room.</figcaption>
+</figure>
+
+<nav class="toc" aria-label="Contents">
+  <b>On this page</b>
+  <ol>
+    <li><a href="#need">What you need</a></li>
+    <li><a href="#install">Install the package</a></li>
+    <li><a href="#open">Open Luw.ai and sign in</a></li>
+    <li><a href="#first-render">Get your first render</a></li>
+    <li><a href="#archigpt">Design a building with ArchiGPT</a></li>
+    <li><a href="#help">Help</a></li>
+  </ol>
+</nav>
+
+<h2 id="need">What you need</h2>
+<ul class="need">
+  <li><b>Unity 6 (6000.0 or later)</b> on Windows 10 or 11, 64-bit. The Universal Render Pipeline (URP), HDRP and the Built-in pipeline all work.</li>
+  <li><b>A Luw.ai account.</b> Each render uses tokens from your account: 1 token for one image.</li>
+  <li><b>An internet connection.</b> The renders are made on Luw.ai's servers. The first install needs it too: the package brings glTFast, Unity's glTF importer, and Unity's Package Manager adds it from Unity's registry.</li>
+  <li><b>Microsoft Edge WebView2 Runtime.</b> Windows 10 and 11 usually have it already.</li>
+  <li><b>The Luw.ai package:</b> <code>Luw.ai-Unity.tgz</code>. <a href="https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-Unity.tgz">Download it here</a> and save it where it can stay.</li>
+</ul>
+
+<h2 id="install">Install the package</h2>
+<ol class="steps">
+  <li>Open your project in Unity.</li>
+  <li>Choose <span class="ui">Window › Package Manager</span>.</li>
+  <li>Click the <span class="ui">+</span> button at the top left and choose <i>Install package from tarball…</i></li>
+  <li>Choose the file <code>Luw.ai-Unity.tgz</code> you downloaded and click <span class="ui">Open</span>.</li>
+  <li>Unity imports Luw.ai and glTFast. Wait until it finishes compiling.</li>
+</ol>
+<div class="note"><b>Keep the file where it is.</b> Unity installs the package from that path. If you want your project to carry it, move <code>Luw.ai-Unity.tgz</code> into the project folder first, then install it from there.</div>
+
+<h2 id="open">Open Luw.ai and sign in</h2>
+<p>Click the <b>Luw.ai</b> button at the right of Unity's main toolbar. Or choose <b>Window › Luw.ai</b>, or <b>Tools › Luw.ai › Open Luw.ai</b>, in Unity's menu bar.</p>
+<figure>
+  <img src="img/unity/menu.png" width="682" height="48" alt="The right end of Unity's main toolbar with the Luw.ai button, marked.">
+</figure>
+<p>The first time, the Luw.ai panel opens as a tab beside the Inspector (or the Hierarchy when there is no Inspector). It is the Luw.ai web app, made to work with Unity. Drag the tab anywhere, like any Unity window: it can float or be maximized too. Close the tab and the page keeps running: open it again and it is as you left it.</p>
+<figure>
+  <img src="img/unity/overview.jpg" width="1600" height="874" alt="The Unity editor with the Luw.ai panel docked at the right, beside the Inspector, showing Luw.ai's tools.">
+  <figcaption>The Luw.ai panel, docked in the Unity editor.</figcaption>
+</figure>
+<p>The thin bar at the top of the panel has <b>Render</b>: choose <i>Scene</i> to render the Scene view's camera, or <i>Game</i> to render the Game view's camera. <b>Reload</b> loads the panel again.</p>
+<div class="note"><b>First time only:</b> click <span class="ui">Sign in with Luw.ai</span> in the panel. Your browser opens: approve, then come back to Unity. One sign-in covers every Luw.ai plugin on your computer, so next time the panel opens ready to use.</div>
+<div class="note"><b>Typing in the panel:</b> while you type in the panel, Unity's shortcuts (<kbd>W</kbd>, <kbd>E</kbd>, <kbd>R</kbd>, <kbd>Delete</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd> and the others) are off, so your words don't turn into commands. Copy, paste and undo work in the panel's text boxes.</div>
+
+<h2 id="first-render">Get your first render</h2>
+<ol class="steps">
+  <li>
+    <b>Set up your view.</b> Frame the Scene view until you like the picture. What you see is what Luw.ai renders, without gizmos or the grid, with post-processing as the Scene view shows it. To render the Game view's camera instead, choose <i>Game</i> next to <b>Render</b> at the top of the panel.
+    <div class="note"><b>Tip:</b> materials and lights in your scene give better renders than plain grey objects.</div>
+  </li>
+  <li>
+    <b>Click Render AI</b> on the panel's home page: your Unity view is already in it. You don't need to save or export anything.
+    <figure class="narrow">
+      <img src="img/unity/render.png" width="520" height="1073" alt="The Luw.ai panel with Render AI open and the Unity Scene view as the picture.">
+    </figure>
+    Moved the camera? Click <span class="ui">Capture Unity view</span> on the picture to take the new view.
+  </li>
+  <li>
+    <b>Choose options</b> if you like: <i>Time of Day</i>, <i>Lighting</i>, or a short <i>Prompt</i> such as “golden hour, warm light on the terrace”. Or leave them on <i>Auto</i>.
+  </li>
+  <li>
+    <b>Click <span class="ui">Generate Image with AI</span>.</b> One image uses 1 token. Your render is ready in about a minute. Click it to open it.
+  </li>
+  <li>
+    <b>Compare and keep it.</b> Drag the slider to compare the render with your view, then click <span class="ui">Add to Unity</span> at the top left.
+    <figure class="narrow">
+      <img src="img/unity/result.png" width="520" height="744" alt="The finished render with a slider comparing it with the Unity view. The Add to Unity button at the top left is marked.">
+    </figure>
+  </li>
+  <li>
+    <b>That's it.</b> The render is now in your scene: a picture standing upright at the Scene view's pivot, on the surface below it, facing the camera. It is unlit and has no collider. To remove it, press <kbd>Ctrl</kbd>+<kbd>Z</kbd> once. The image and its material are kept in your project under <code>Assets/Luw.ai/Renders</code>.
+    <figure>
+      <img src="img/unity/in-model.jpg" width="1600" height="900" alt="The Unity Scene view with the render standing upright in the scene and a 3D AI model next to it.">
+      <figcaption>Your render standing in the scene, and a 3D AI model next to it.</figcaption>
+    </figure>
+  </li>
+</ol>
+
+<h3>More tools</h3>
+<p>Open the menu (☰) at the top of the panel for more tools, such as interiors, exteriors, sketch to render and video. Most tools start with your Unity view. With <b>3DGen AI</b> you get a 3D model, and <span class="ui">Add to Unity</span> brings it into your scene: at the Scene view's pivot on the surface below, its front to the camera, 1 m on its largest side, with a Mesh Collider. One <kbd>Ctrl</kbd>+<kbd>Z</kbd> removes it. The model is kept in your project under <code>Assets/Luw.ai/Models</code>.</p>
+
+<h2 id="archigpt">Design a building with ArchiGPT</h2>
+<p>ArchiGPT is Luw.ai's design assistant. In Unity it builds what you describe straight into your scene, as ordinary GameObjects with real meshes, while you watch.</p>
+<ol class="steps">
+  <li>
+    <b>Open ArchiGPT</b> from the home page of the Luw.ai panel.
+  </li>
+  <li>
+    <b>Say what you want.</b> Describe the building, or attach a photo of a plan you drew on paper and write something like “Apply this floorplan as a small house.” ArchiGPT builds it in Unity: walls, floors, the roof, doors and windows, stairs, rooms, furniture. In the Hierarchy it is one object, <i>Luw.ai:</i> and the design's name, with a group for each kind: <i>Walls</i>, <i>Slabs</i>, <i>Ceilings</i>, <i>Roof</i>, <i>Doors</i>, <i>Windows</i>, <i>Glass</i>, <i>Stairs</i>, <i>Columns</i>, <i>Fences</i>, <i>Rooms</i> and <i>Furniture</i>.
+    <figure>
+      <img src="img/unity/archigpt.jpg" width="1600" height="874" alt="Unity with a small timber cabin built by ArchiGPT in the Scene view, its name in the Hierarchy, and the conversation in the Luw.ai panel.">
+      <figcaption>The cabin in Unity, and the conversation that built it.</figcaption>
+    </figure>
+  </li>
+  <li>
+    <b>Change it by talking.</b> “Give it a 35° gable roof”, “make the living room bigger”. Only what changed is rebuilt. Select something in Unity first and ArchiGPT knows what “this” means. It knows your own objects too: “move the cube I made 2 m east”, “what else is in the scene?” Ask it to copy, rotate, scale, hide or lock objects, measure (“how long is this wall?”), cut a section (“cut the view at 1.2 m”), set the sun (“sun for 21 June at 17:00 in Istanbul”) or save the view.
+    <div class="note"><b>Hide and lock:</b> ArchiGPT uses the Scene view's visibility and picking toggles, so Play mode and your builds are not affected.</div>
+  </li>
+  <li>
+    <b>Change it yourself, too.</b> Move or delete what ArchiGPT built, or add objects of your own, whenever you like. When ArchiGPT builds again, what you moved or deleted stays as you left it.
+  </li>
+  <li>
+    <b>Add materials.</b> “Light oak floors, white plaster walls, a dark grey metal roof.” ArchiGPT paints the model and lays textures on it. The materials and textures are kept in your project under <code>Assets/Luw.ai/Materials</code> and <code>Assets/Luw.ai/Textures</code>, the furniture models under <code>Assets/Luw.ai/Furniture</code>.
+  </li>
+  <li>
+    <b>Render it.</b> Frame a view in the Scene view and ask for a render. ArchiGPT shows what it will cost and waits for your <span class="ui">Approve</span>. Click a result to see it full size in a large window over Unity (<kbd>Esc</kbd> closes it), or put it in your scene with <span class="ui">Add to Unity</span>.
+  </li>
+</ol>
+<div class="note"><b>Undo:</b> each change ArchiGPT makes in Unity is one step. Press <kbd>Ctrl</kbd>+<kbd>Z</kbd> to take it back, or ask ArchiGPT to undo.</div>
+<div class="note"><b>Ready for Play mode:</b> walls, slabs, ceilings, roofs, stairs, columns, fences and glass get Mesh Colliders, and what ArchiGPT builds is marked Static. Luw.ai's tags on the built objects are removed from player builds automatically.</div>
+
+<h2 id="help">Help</h2>
+<dl class="help">
+  <dt>I don't see Luw.ai in the Window menu.</dt>
+  <dd>Wait until Unity finishes importing and compiling. Then choose <span class="ui">Window › Package Manager</span> and check that Luw.ai is in the list. If it is not, install it again from <code>Luw.ai-Unity.tgz</code>.</dd>
+
+  <dt>Luw.ai stopped loading after I moved the <code>.tgz</code> file.</dt>
+  <dd>Unity installs the package from the path you chose. Put the file back, or install it again from its new place.</dd>
+
+  <dt>The panel is empty or doesn't load.</dt>
+  <dd>Luw.ai needs the internet and the Microsoft Edge WebView2 Runtime. Check your connection, <a href="https://go.microsoft.com/fwlink/p/?LinkId=2124703">install the WebView2 Runtime</a> if the panel says it is missing, then click <b>Reload</b> at the top of the panel.</dd>
+
+  <dt>The picture in the panel is an old view.</dt>
+  <dd>Click <span class="ui">Capture Unity view</span> on the picture.</dd>
+
+  <dt>Unity's shortcuts don't work.</dt>
+  <dd>They are off while you type in the panel. Click in the Scene view, and they work again.</dd>
+
+  <dt>Something went wrong.</dt>
+  <dd>Send us the file <code>%LOCALAPPDATA%\Luw.ai\logs\plugin.log</code>.</dd>
+
+  <dt>How do I remove the package?</dt>
+  <dd>Choose <span class="ui">Window › Package Manager</span>, select <b>Luw.ai</b> and click <b>Remove</b>. What Luw.ai added to your scene and to <code>Assets/Luw.ai</code> stays.</dd>
+</dl>
+
+<footer>
+  Luw.ai for Unity 0.1.8 · Screenshots from Unity 6.6 on Windows.
+</footer>
+
+</main>
+</body>
+</html>

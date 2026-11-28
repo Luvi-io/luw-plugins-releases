@@ -4,15 +4,15 @@ Plugins that bring [Luw.ai](https://luw.ai) into SketchUp, Rhino (with Grasshopp
 
 Each link always downloads the newest version:
 
-| App | File | Works with |
-|---|---|---|
-| SketchUp | [`luw_ai.rbz`](https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/luw_ai.rbz) | SketchUp 2021.1 and newer, Windows and Mac |
-| Rhino + Grasshopper | [`Luw.ai-Rhino.zip`](https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-Rhino.zip) | Rhino 7, 8 and 9 |
-| Revit | [`Luw.ai-Revit.zip`](https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-Revit.zip) | Revit 2024, 2025, 2026 and 2027 |
-| 3ds Max | [`Luw.ai-3dsMax.zip`](https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-3dsMax.zip) | 3ds Max 2024, 2025, 2026 and 2027 |
-| Unity | [`Luw.ai-Unity.tgz`](https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-Unity.tgz) | Unity 6 (6000.0 and newer), Windows |
-| Unreal Engine | [`Luw.ai-Unreal.zip`](https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-Unreal.zip) | Unreal Engine 5.7, Windows |
-| Blender | [`Luw.ai-Blender.zip`](https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-Blender.zip) | Blender 4.2 and newer, Windows |
+| App | File | Available for | Tested on |
+|---|---|---|---|
+| SketchUp | [`luw_ai.rbz`](https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/luw_ai.rbz) | SketchUp 2021.1 and newer, Windows and Mac | SketchUp 2026 and 2027, Windows |
+| Rhino + Grasshopper | [`Luw.ai-Rhino.zip`](https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-Rhino.zip) | Rhino 7, 8 and 9, Windows | Rhino 7 and 9 |
+| Revit | [`Luw.ai-Revit.zip`](https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-Revit.zip) | Revit 2024, 2025, 2026 and 2027 | Revit 2027 |
+| 3ds Max | [`Luw.ai-3dsMax.zip`](https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-3dsMax.zip) | 3ds Max 2024, 2025, 2026 and 2027 | 3ds Max 2027 |
+| Unity | [`Luw.ai-Unity.tgz`](https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-Unity.tgz) | Unity 6 (6000.0 and newer), Windows | Unity 6.0 LTS and 6.6 |
+| Unreal Engine | [`Luw.ai-Unreal.zip`](https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-Unreal.zip) | Unreal Engine 5.7, Windows | Unreal Engine 5.7 |
+| Blender | [`Luw.ai-Blender.zip`](https://github.com/Luvi-io/luw-plugins-releases/releases/latest/download/Luw.ai-Blender.zip) | Blender 4.2 and newer, Windows | Blender 4.2 LTS and 5.2 LTS |
 
 Every version, with its notes: the **[releases page](https://github.com/Luvi-io/luw-plugins-releases/releases)**.
 
